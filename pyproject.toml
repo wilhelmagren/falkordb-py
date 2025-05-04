@@ -1,25 +1,31 @@
-[tool.poetry]
-name = "FalkorDB"
-version = "1.1.1"
-description = "Python client for interacting with FalkorDB database"
-authors = ["FalkorDB inc <info@falkordb.com>"]
-
+[project]
+name = "pyfalkor"
+version = "1.1.0"
+description = "Python client for interacting with any FalkorDB graph database."
 readme = "README.md"
-repository = "http://github.com/falkorDB/falkordb-py"
-homepage = "http://falkordb-py.readthedocs.io"
-keywords = ['FalkorDB', 'GraphDB', 'Cypher']
+requires-python = ">=3.11"
+dependencies = [
+    "redis>=6.0.0",
+]
 
-packages = [{include = "falkordb"}]
+[dependency-groups]
+test = [
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.26.0",
+    "pytest-cov>=6.1.1",
+]
 
-[tool.poetry.dependencies]
-python = "^3.8"
-redis = "^5.0.1"
 
-[tool.poetry.group.test.dependencies]
-pytest-cov = ">=4.1,<6.0"
-pytest = "8.3.5"
-pytest-asyncio = ">=0.23.4,<0.25.0"
+[tool.ruff]
+line-length = 88
+indent-width = 4
+target-version = "py311"
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.ruff.lint]
+select = ["I", "F", "E", "W", "B", "ANN"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402"]
+
+[tool.ruff.format]
+quote-style = "single"
