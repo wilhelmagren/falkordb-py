@@ -59,6 +59,8 @@ class FalkorDB(object):
         url = url.replace("falkor://", "redis://") \
             .replace("falkors://", "rediss://")
 
+        # TODO: find host and port
+
         return cls(**kwargs)
 
     def __init__(
