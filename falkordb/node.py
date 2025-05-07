@@ -19,6 +19,21 @@ class Node:
         labels: Optional[Union[str, List[str]]] = None,
         properties: Optional[Dict[str, Any]] = None,
     ) -> None:
+        """
+        Initialize a new ``Node``.
+
+        Parameters
+        ----------
+        alias : str
+            Alias name for the node.
+        node_id : int | None
+            Optional id for the node.
+        labels : str | list | None
+            Optional labels associated with the node.
+        properties : dict | None
+            Properties assigned to the node.
+
+        """
 
         if isinstance(labels, str):
             labels = [labels]

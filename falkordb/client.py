@@ -21,7 +21,7 @@ from redis.cache import (
 from redis.cluster import ClusterNode
 from redis.connection import ConnectionPool
 from redis.credentials import CredentialProvider
-from redis.events import EventDispatcher
+from redis.event import EventDispatcher
 from redis.retry import Retry
 
 from .__version__ import __version__
